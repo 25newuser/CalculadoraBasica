@@ -1,0 +1,67 @@
+using System;
+
+namespace EjercicioCalculadora
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1;
+            int num2;
+            double resultado;
+
+            Console.WriteLine("Ingrese el primer valor ");
+            num1 = Convert.ToInt16(Console.ReadLine());
+            if(num1 < 0)
+            {
+                Environment.Exit(0);
+            }
+
+            Console.WriteLine("Ingrese el segundo valor ");
+            num2 = Convert.ToInt16(Console.ReadLine());
+            if (num2 < 0)
+            {
+                Environment.Exit(0);
+            }
+
+            Console.WriteLine("Ingrese el operador (puede ser +,-,*,/ y %) ");
+            String operador = Convert.ToString(Console.ReadLine());
+            if (operador == "+")
+            {
+                resultado = num1 + num2;
+                Console.WriteLine("El resultado de la suma es: "+ resultado);
+            }
+
+            if (operador == "-")
+            {
+                    resultado = num1 - num2;
+                    Console.WriteLine("El resultado de la resta es: " + resultado);
+            }
+
+            if (operador == "*")
+            {
+                        resultado = num1 * num2;
+                        Console.WriteLine("El resultado de la multiplicacion es: " + resultado);
+            }
+
+            if (operador == "/")
+            {
+                if (num2 == 0)
+                {
+                    Environment.Exit(0);
+                }
+
+                else
+                {
+                    resultado = num1 / num2;
+                    Console.WriteLine("El resultado de la division es: " + resultado);
+                }
+            } 
+            if (operador == "%")
+            {
+                resultado = num1 % num2;
+                Console.WriteLine("El resto de la division es: " + resultado);
+            }
+        }
+    }
+}
